@@ -127,5 +127,14 @@ _modules/*
 
 
 /vendor/
-/writable/
+/app/Database/*.sqlite
+/writable/*
+!/writable/cache/
+!/writable/cache/.gitkeep
+!/writable/logs/
+!/writable/logs/.gitkeep
+!/writable/session/
+!/writable/session/.gitkeep
+!/writable/uploads/
+!/writable/uploads/.gitkeep
 .env

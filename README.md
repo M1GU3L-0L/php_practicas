@@ -28,6 +28,18 @@ to your `app` folder. The affected files can be copied or merged from
 Copy `env` to `.env` and tailor for your app, specifically the baseURL
 and any database settings.
 
+### SQLite
+
+To use SQLite, enable PHP's `sqlite3` extension. The default database group is
+configured for SQLite3 and stores its database in `writable/code_peliculas.sqlite`.
+If `.env` defines `database.default.*` values, those override the defaults in
+`app/Config/Database.php`; make sure the directory in `database.default.database`
+exists and is writable. Create the tables by running:
+
+```sh
+php spark migrate
+```
+
 ## Important Change with index.php
 
 `index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
@@ -65,5 +77,6 @@ PHP version 8.2 or higher is required, with the following extensions installed:
 Additionally, make sure that the following extensions are enabled in your PHP:
 
 - json (enabled by default - don't turn it off)
+- [sqlite3](http://php.net/manual/en/sqlite3.installation.php) if you plan to use SQLite
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
