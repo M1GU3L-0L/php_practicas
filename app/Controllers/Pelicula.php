@@ -40,13 +40,29 @@ class Pelicula extends BaseController
         $peliculaModel = new PeliculaModel();
 
         echo view('pelicula/edit',[
-            'pelicula' => $peliculaModel
+            'pelicula' => $peliculaModel->find($id)
         ]);
     }
 
     public function update($id)
     {
         
+        $peliculaModel = new PeliculaModel();
+
+        $peliculaModel->update($id,[
+            'titulo' => $this->request->getPost('titulo'),
+            'descripcion' => $this->request->getPost('descripcion')
+        ]);
+
+        echo 'update';
+    }
+
+    public function delete($id)
+    {
+        $peliculaModel = new PeliculaModel();
+        $peliculaModel->delete($id);
+
+        echo "delete";
     }
 
     public function index()
@@ -54,9 +70,7 @@ class Pelicula extends BaseController
 
         $peliculaModel = new PeliculaModel();
 
-        var_dump($peliculaModel->findAll());
-
-        echo view('index',[
+        echo view('pelicula/index',[
             'peliculas' => $peliculaModel->findAll()
         ]);
     }
