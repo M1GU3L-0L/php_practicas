@@ -7,6 +7,8 @@
 </head>
 <body>
     
+    <a href="/pelicula">Inicio</a>
+
     <h1> <?= $pelicula['titulo'] ?></h1>
     <h2> <?= $pelicula['descripcion'] ?> </h2>
 </body>
