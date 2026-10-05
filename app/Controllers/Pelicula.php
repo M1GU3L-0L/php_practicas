@@ -17,23 +17,36 @@ class Pelicula extends BaseController
         ]);
     }
 
+    public function new()
+    {
+        echo view('pelicula/new');
+    }
+
     public function create()
     {
 
         $peliculaModel = new PeliculaModel();
 
-        return var_dump($this->request->getPost('rol'));
-        
         $peliculaModel->insert([
             'titulo' => $this->request->getPost('titulo'),
             'descripcion' => $this->request->getPost('descripcion')
         ]);
 
+        echo 'creado';
     }
 
-    public function new()
+    public function edit($id)
     {
-        echo view('pelicula/new');
+        $peliculaModel = new PeliculaModel();
+
+        echo view('pelicula/edit',[
+            'pelicula' => $peliculaModel
+        ]);
+    }
+
+    public function update($id)
+    {
+        
     }
 
     public function index()

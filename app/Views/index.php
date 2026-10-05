@@ -28,9 +28,9 @@
                 <td><?= $p['titulo'] ?></td>
                 <td><?= $p['descripcion'] ?></td>
                 <td>
-                    <a href="/pelicula/show/<?=  $p['id'] ?>">Show</a>
-                    <a href="/pelicula/edit/<?=  $p['id'] ?>">Edit</a>
-                    <a href="/pelicula/remove/<?=  $p['id'] ?>">Delete</a>
+                    <a href="/pelicula/show/<?=  $p['id'] ?>">Mostrar</a>
+                    <a href="/pelicula/edit/<?=  $p['id'] ?>">Editar</a>
+                    <a href="/pelicula/remove/<?=  $p['id'] ?>">Eliminar</a>
                 </td>
             </tr>
         <?php endforeach ?>
