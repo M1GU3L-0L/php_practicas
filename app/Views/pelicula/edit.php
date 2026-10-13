@@ -7,10 +7,10 @@
 </head>
 <body>
 
-    <a href="/pelicula">Inicio</a>
+    <a href="/dashboard/pelicula">Inicio</a>
 
-    <form action="/pelicula/update/<?= $pelicula['id'] ?>" method="post">
-        <?= view('pelicula/form', ['op' => 'Actualizar']) ?>
+    <form action="/dashboard/pelicula/update/<?= $pelicula['id'] ?>" method="post">
+        <?= view('/pelicula/form', ['op' => 'Actualizar']) ?>
     </form>
 </body>
 

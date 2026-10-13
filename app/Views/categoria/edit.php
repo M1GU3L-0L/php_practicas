@@ -7,9 +7,9 @@
 </head>
 <body>
 
-    <a href="/categoria">Inicio</a>
+    <a href="/dashboard/categoria">Inicio</a>
 
-    <form action="/categoria/update/<?= $categoria['id'] ?>" method="post">
+    <form action="/dashboard/categoria/update/<?= $categoria['id'] ?>" method="post">
         <?= view('categoria/form', ['op' => 'Actualizar']) ?>
     </form>
 </body>

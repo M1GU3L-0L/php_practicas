@@ -7,9 +7,9 @@
 </head>
 <body>
 
-    <a href="/categoria">Inicio</a>
+    <a href="/dashboard/categoria">Inicio</a>
 
-    <form action="/categoria/create" method="post">
+    <form action="/dashboard/categoria/create" method="post">
         <?= view('categoria/form', ['op' => 'Crear']) ?>
     </form>
 </body>

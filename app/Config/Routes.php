@@ -15,11 +15,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
 
 /** @var RouteCollection $routes */
 
-/*
- * --------------------------------------------------------------------
- * Router Setup
- * --------------------------------------------------------------------
- */
+
 $routes->setDefaultNamespace('App\Controllers');
 // $routes->setDefaultController('Home');
 // $routes->setDefaultMethod('index');
@@ -28,14 +24,18 @@ $routes->set404Override();
 
 // $routes->get('/', 'Home::index');
 
-$routes->presenter('pelicula');
 // $routes->get('pelicula', 'Pelicula::index');
 // $routes->get('pelicula/new', 'Pelicula::create');
 // $routes->get('pelicula/edit/(:num)', 'Pelicula::create/$1');
 
 
+$routes->group('dashboard', function ($routes) {
+    $routes->presenter('pelicula');
+    $routes->presenter('categoria');
+});
 
-$routes->presenter('categoria');
+
+
 // $routes->get('categoria', 'Categoria::index');
 // $routes->get('categoria/new', 'Categoria::create');
 // $routes->get('categoria/edit/(:num)', 'Categoria::create/$1');

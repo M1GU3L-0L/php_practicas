@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <a href="/categoria">Inicio</a>
+    <a href="/dashboard/categoria">Inicio</a>
 
     <h1> <?= $categoria['titulo'] ?></h1>
 </body>
