@@ -7,6 +7,11 @@ use App\Models\PeliculaModel;
 class Pelicula extends BaseController 
 {
 
+    public function test($id)
+    {
+        echo 'test'.$id;
+    }
+
     public function show($id)
     {
 
@@ -21,6 +26,7 @@ class Pelicula extends BaseController
     {
         echo view('pelicula/new',[
             'pelicula' => [
+
                 'titulo' => '',
                 'descripcion' => ''
             ]
@@ -37,7 +43,7 @@ class Pelicula extends BaseController
             'descripcion' => $this->request->getPost('descripcion')
         ]);
 
-        echo 'creado';
+        return redirect()->to('/dashboard/pelicula');
     }
 
     public function edit($id)
@@ -59,7 +65,8 @@ class Pelicula extends BaseController
             'descripcion' => $this->request->getPost('descripcion')
         ]);
 
-        echo 'update';
+        //return redirect()->back();
+        return redirect()->to('/dashboard/pelicula');
     }
 
     public function delete($id)
@@ -67,7 +74,7 @@ class Pelicula extends BaseController
         $peliculaModel = new PeliculaModel();
         $peliculaModel->delete($id);
 
-        echo "delete";
+        return redirect()->to('/dashboard/pelicula');
     }
 
     public function index()

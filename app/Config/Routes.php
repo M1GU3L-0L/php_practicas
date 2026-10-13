@@ -22,7 +22,7 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 
-// $routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index');
 
 // $routes->get('pelicula', 'Pelicula::index');
 // $routes->get('pelicula/new', 'Pelicula::create');
@@ -32,6 +32,9 @@ $routes->set404Override();
 $routes->group('dashboard', function ($routes) {
     $routes->presenter('pelicula');
     $routes->presenter('categoria');
+
+    $routes->get('test/(:num)', 'Pelicula::test/$1', ['as'=>'test']);
+
 });
 
 

@@ -10,6 +10,7 @@
 
     <h1>Listado de Peliculas</h1>
     
+    <a href="<?= route_to('test',5) ?>">Test</a>
     <a href="/dashboard/pelicula/new">Crear</a>
 
     <table>

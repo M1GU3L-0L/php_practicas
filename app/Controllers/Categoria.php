@@ -35,7 +35,7 @@ class Categoria extends BaseController
             'titulo' => $this->request->getPost('titulo')
         ]);
 
-        echo 'creado';
+        return redirect()->to('/dashboard/categoria');
     }
 
     public function edit($id)
@@ -56,7 +56,7 @@ class Categoria extends BaseController
             'titulo' => $this->request->getPost('titulo'),
         ]);
 
-        echo 'update';
+        return redirect()->to('/dashboard/categoria');
     }
 
     public function delete($id)
@@ -64,7 +64,7 @@ class Categoria extends BaseController
         $categoriaModel = new CategoriaModel();
         $categoriaModel->delete($id);
 
-        echo "delete";
+        return redirect()->to('/dashboard/categoria');
     }
 
     public function index()
