@@ -10,14 +10,8 @@
     <a href="/pelicula">Inicio</a>
 
     <form action="/pelicula/update/<?= $pelicula['id'] ?>" method="post">
-        <label for="titulo">Titulo</label>
-        <input type="text" name="titulo" placeholder="Titulo" id="titulo" value="<?= $pelicula['titulo'] ?>">
-
-        <label for="descripcion">Descripcion</label>
-        <textarea name="descripcion" id="descripcion">
-            <?= $pelicula['descripcion'] ?>
-        </textarea>
-        <button type="submit">Enviar</button>
+        <?= view('pelicula/form', ['op' => 'Actualizar']) ?>
     </form>
 </body>
+
 </html>
