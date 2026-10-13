@@ -30,14 +30,14 @@ $routes->get('/', 'Home::index');
 
 
 $routes->group('dashboard', function ($routes) {
-    $routes->presenter('pelicula');
-    $routes->presenter('categoria');
+    $routes->presenter('pelicula', ['controller' => 'Dashboard\Pelicula']);
+    //$routes->presenter('categoria');
 
-    $routes->get('test/(:num)', 'Pelicula::test/$1', ['as'=>'test']);
+    $routes->presenter('categoria', ['controller' => 'Dashboard\Categoria', 'except' => ['show']]);
 
 });
 
-
+//$routes->get('test/(:num)', 'Pelicula::test/$1', ['as'=>'test']);
 
 // $routes->get('categoria', 'Categoria::index');
 // $routes->get('categoria/new', 'Categoria::create');
