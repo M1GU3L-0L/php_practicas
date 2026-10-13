@@ -10,6 +10,5 @@
     <a href="/categoria">Inicio</a>
 
     <h1> <?= $categoria['titulo'] ?></h1>
-    <h2> <?= $categoria['descripcion'] ?> </h2>
 </body>
 </html>

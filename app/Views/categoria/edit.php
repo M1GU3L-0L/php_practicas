@@ -10,7 +10,7 @@
     <a href="/categoria">Inicio</a>
 
     <form action="/categoria/update/<?= $categoria['id'] ?>" method="post">
-        <?= view('categoria/_form', ['op' => 'Actualizar']) ?>
+        <?= view('categoria/form', ['op' => 'Actualizar']) ?>
     </form>
 </body>
 

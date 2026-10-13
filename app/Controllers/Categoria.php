@@ -20,7 +20,7 @@ class Categoria extends BaseController
     public function new()
     {
         echo view('categoria/new', [
-            'pelicula' => [
+            'categoria' => [
                 'titulo' => ''
             ]
         ]);
