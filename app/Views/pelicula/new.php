@@ -10,12 +10,7 @@
     <a href="/pelicula">Inicio</a>
 
     <form action="/pelicula/create" method="post">
-        <label for="titulo">Titulo</label>
-        <input type="text" name="titulo" placeholder="Titulo" id="titulo">
-
-        <label for="descripcion">Descripcion</label>
-        <textarea name="descripcion" id="descripcion"></textarea>
-        <button type="submit">Enviar</button>
+        <?= view('pelicula/form', ['op' => 'Crear']) ?>
     </form>
 </body>
 </html>

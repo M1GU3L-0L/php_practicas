@@ -19,7 +19,12 @@ class Pelicula extends BaseController
 
     public function new()
     {
-        echo view('pelicula/new');
+        echo view('pelicula/new',[
+            'pelicula' => [
+                'titulo' => '',
+                'descripcion' => ''
+            ]
+        ]);
     }
 
     public function create()

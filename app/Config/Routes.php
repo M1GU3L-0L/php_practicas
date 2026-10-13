@@ -4,6 +4,7 @@ namespace Config;
 
 $routes = Services::routes();
 
+use App\Controllers\Categoria;
 use App\Controllers\Pelicula;
 use CodeIgniter\Router\RouteCollection;
 
@@ -27,11 +28,17 @@ $routes->set404Override();
 
 // $routes->get('/', 'Home::index');
 
+$routes->presenter('pelicula');
 // $routes->get('pelicula', 'Pelicula::index');
 // $routes->get('pelicula/new', 'Pelicula::create');
 // $routes->get('pelicula/edit/(:num)', 'Pelicula::create/$1');
 
-$routes->presenter('pelicula');
+
+
+$routes->presenter('categoria');
+// $routes->get('categoria', 'Categoria::index');
+// $routes->get('categoria/new', 'Categoria::create');
+// $routes->get('categoria/edit/(:num)', 'Categoria::create/$1');
 
 // $routes->post('/hola-mundo', 'Home::index');
 // // $routes->put('/hola-mundo', 'Home::index');
