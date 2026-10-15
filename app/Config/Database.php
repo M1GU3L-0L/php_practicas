@@ -29,7 +29,7 @@ class Database extends Config
         'hostname'     => 'localhost',
         'username'     => '',
         'password'     => '',
-        'database'     => WRITEPATH . 'code_peliculas.sqlite',
+        'database'     => WRITEPATH . 'code_autos.sqlite',
         'DBDriver'     => 'SQLite3',
         'DBPrefix'     => '',
         'pConnect'     => false,

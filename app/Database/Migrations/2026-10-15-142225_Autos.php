@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Peliculas extends Migration
+class Autos extends Migration
 {
     public function up()
     {
@@ -15,9 +15,17 @@ class Peliculas extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'titulo' => [
+            'marca' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255'
+            ],
+            'modelo' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255'
+            ],
+            'anio' => [
+                'type' => 'INT',
+                'constraint' => 4
             ],
             'descripcion' => [
                 'type' => 'TEXT',
@@ -26,11 +34,11 @@ class Peliculas extends Migration
         ]);
 
         $this->forge->addKey('id', true);
-        $this->forge->createTable('peliculas');
+        $this->forge->createTable('autos');
     }
 
     public function down()
     {
-        $this->forge->dropTable('peliculas');
+        $this->forge->dropTable('autos');
     }
 }

@@ -4,8 +4,6 @@ namespace Config;
 
 $routes = Services::routes();
 
-use App\Controllers\Categoria;
-use App\Controllers\Pelicula;
 use CodeIgniter\Router\RouteCollection;
 
 
@@ -24,20 +22,13 @@ $routes->set404Override();
 
 $routes->get('/', 'Home::index');
 
-// $routes->get('pelicula', 'Pelicula::index');
-// $routes->get('pelicula/new', 'Pelicula::create');
-// $routes->get('pelicula/edit/(:num)', 'Pelicula::create/$1');
-
-
 $routes->group('dashboard', function ($routes) {
-    $routes->presenter('pelicula', ['controller' => 'Dashboard\Pelicula']);
+    $routes->presenter('autos', ['controller' => 'Dashboard\Auto']);
     //$routes->presenter('categoria');
 
     $routes->presenter('categoria', ['controller' => 'Dashboard\Categoria', 'except' => ['show']]);
 
 });
-
-//$routes->get('test/(:num)', 'Pelicula::test/$1', ['as'=>'test']);
 
 // $routes->get('categoria', 'Categoria::index');
 // $routes->get('categoria/new', 'Categoria::create');
