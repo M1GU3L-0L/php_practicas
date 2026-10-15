@@ -31,7 +31,7 @@ and any database settings.
 ### SQLite
 
 To use SQLite, enable PHP's `sqlite3` extension. The default database group is
-configured for SQLite3 and stores its database in `writable/code_autos.sqlite`.
+configured for SQLite3 and stores its database in `writable/code_peliculas.sqlite`.
 If `.env` defines `database.default.*` values, those override the defaults in
 `app/Config/Database.php`; make sure the directory in `database.default.database`
 exists and is writable. Create the tables by running:
