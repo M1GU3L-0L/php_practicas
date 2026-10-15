@@ -7,13 +7,14 @@ use App\Models\PeliculaModel;
 
 class Pelicula extends BaseController 
 {
+    protected PeliculaModel $peliculaModel;
 
-    public function test($id)
+    public function test(int $id)
     {
         echo 'test'.$id;
     }
 
-    public function show($id)
+    public function show(int $id)
     {
 
         $peliculaModel = new PeliculaModel();
@@ -47,7 +48,7 @@ class Pelicula extends BaseController
         return redirect()->to('/dashboard/pelicula');
     }
 
-    public function edit($id)
+    public function edit(int $id)
     {
         $peliculaModel = new PeliculaModel();
 
@@ -56,7 +57,7 @@ class Pelicula extends BaseController
         ]);
     }
 
-    public function update($id)
+    public function update(int $id)
     {
         
         $peliculaModel = new PeliculaModel();
@@ -70,7 +71,7 @@ class Pelicula extends BaseController
         return redirect()->to('/dashboard/pelicula');
     }
 
-    public function delete($id)
+    public function delete(int $id)
     {
         $peliculaModel = new PeliculaModel();
         $peliculaModel->delete($id);

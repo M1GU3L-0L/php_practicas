@@ -7,10 +7,11 @@ use App\Models\CategoriaModel;
 
 class Categoria extends BaseController
 {
+    protected CategoriaModel $categoriaModel;
 
-    public function show($id)
+    public function show(int $id)
     {
-
+        
         $categoriaModel = new CategoriaModel();
 
         echo view('categoria/show',[
@@ -39,7 +40,7 @@ class Categoria extends BaseController
         return redirect()->to('/dashboard/categoria');
     }
 
-    public function edit($id)
+    public function edit(int $id)
     {
         $categoriaModel = new CategoriaModel();
 
@@ -48,7 +49,7 @@ class Categoria extends BaseController
         ]);
     }
 
-    public function update($id)
+    public function update(int $id)
     {
         
         $categoriaModel = new CategoriaModel();
@@ -60,7 +61,7 @@ class Categoria extends BaseController
         return redirect()->to('/dashboard/categoria');
     }
 
-    public function delete($id)
+    public function delete(int $id)
     {
         $categoriaModel = new CategoriaModel();
         $categoriaModel->delete($id);
