@@ -1,3 +1,4 @@
+<?php /** @var array $pelicula */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

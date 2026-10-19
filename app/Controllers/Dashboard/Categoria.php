@@ -14,14 +14,14 @@ class Categoria extends BaseController
         
         $categoriaModel = new CategoriaModel();
 
-        echo view('categoria/show',[
+        echo view('dashboard/categoria/show',[
             'categoria' => $categoriaModel->find($id)
         ]);
     }
 
     public function new()
     {
-        echo view('categoria/new', [
+        echo view('dashboard/categoria/new', [
             'categoria' => [
                 'titulo' => ''
             ]
@@ -37,14 +37,14 @@ class Categoria extends BaseController
             'titulo' => $this->request->getPost('titulo')
         ]);
 
-        return redirect()->to('/dashboard/categoria');
+        return redirect()->to('/dashboard/categoria')->with('mensaje', 'Registro creado exitosamente');
     }
 
     public function edit(int $id)
     {
         $categoriaModel = new CategoriaModel();
 
-        echo view('categoria/edit',[
+        echo view('dashboard/categoria/edit',[
             'categoria' => $categoriaModel->find($id)
         ]);
     }
@@ -58,7 +58,7 @@ class Categoria extends BaseController
             'titulo' => $this->request->getPost('titulo'),
         ]);
 
-        return redirect()->to('/dashboard/categoria');
+        return redirect()->to('/dashboard/categoria')->with('mensaje', 'Registro actualizado exitosamente');
     }
 
     public function delete(int $id)
@@ -66,7 +66,10 @@ class Categoria extends BaseController
         $categoriaModel = new CategoriaModel();
         $categoriaModel->delete($id);
 
+        session()->setFlashdata('mensaje', 'Registro eliminado con exito');
+
         return redirect()->to('/dashboard/categoria');
+        //->with('mensaje', 'Registro eliminado exitosamente')
     }
 
     public function index()
@@ -74,7 +77,7 @@ class Categoria extends BaseController
 
         $categoriaModel = new CategoriaModel();
 
-        echo view('categoria/index',[
+        echo view('dashboard/categoria/index',[
             'categorias' => $categoriaModel->findAll()
         ]);
     }

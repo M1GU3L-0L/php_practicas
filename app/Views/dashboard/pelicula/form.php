@@ -1,3 +1,7 @@
+<?php /** 
+ * @var array $pelicula 
+ * @var string $op
+ */ ?>
 <label for="titulo">Titulo</label>
 <input type="text" name="titulo" placeholder="Titulo" id="titulo" value="<?= $pelicula['titulo'] ?>">
 <label for="descripcion">Descripcion</label>

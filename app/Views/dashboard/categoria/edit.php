@@ -1,3 +1,4 @@
+<?php /** @var array $categoria */ ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,11 +7,12 @@
     <title>Actualizar Categorias</title>
 </head>
 <body>
-
     <a href="/dashboard/categoria">Inicio</a>
 
+    <?= view('partials/_session') ?>
+
     <form action="/dashboard/categoria/update/<?= $categoria['id'] ?>" method="post">
-        <?= view('categoria/form', ['op' => 'Actualizar']) ?>
+        <?= view('dashboard/categoria/form', ['op' => 'Actualizar']) ?>
     </form>
 </body>
 
