@@ -9,11 +9,6 @@ class Pelicula extends BaseController
 {
     protected PeliculaModel $peliculaModel;
 
-    public function test(int $id)
-    {
-        echo 'test'.$id;
-    }
-
     public function show(int $id)
     {
 
@@ -81,6 +76,7 @@ class Pelicula extends BaseController
 
     public function index()
     {
+        session()->set('key', 7);
 
         $peliculaModel = new PeliculaModel();
 
